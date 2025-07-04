@@ -220,6 +220,21 @@ body {
   }
 }
 
+.bat-logo {
+  height: 40px;
+  max-width: 100%;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+@media (max-width: 500px) {
+  .bat-logo {
+    height: 24px; /* smaller for phones */
+    margin-right: 6px;
+  }
+}
+
+
 /* 🎈 Optional blow button for mobile */
 .blow-btn {
   display: block;
