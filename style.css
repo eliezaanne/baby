@@ -1,0 +1,239 @@
+/* 🎨 Background and overall styling */
+body {
+  background-color: #0d0d0d;
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+}
+
+/* 🎉 Greeting banner */
+.candle-count-display {
+  text-align: center;
+  margin-top: 120px;
+  margin-bottom: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #fdd835;
+  background-color: #1a1a1a;
+  padding: 10px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  border: 2px solid #fdd835;
+}
+
+.candle-count-display img {
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+/* 🎂 Cake setup */
+.cake {
+  position: absolute;
+  width: 250px;
+  height: 200px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.plate {
+  width: 270px;
+  height: 110px;
+  position: absolute;
+  bottom: -10px;
+  left: -10px;
+  background-color: #999;
+  border-radius: 50%;
+  box-shadow: 0 4px 40px rgba(0, 0, 0, 0.7);
+}
+
+.layer {
+  display: block;
+  width: 250px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #1c1c1c;
+  position: absolute;
+  box-shadow: 0 3px 0px #333;
+}
+
+.layer-top {
+  top: 0;
+}
+.layer-middle {
+  top: 33px;
+}
+.layer-bottom {
+  top: 66px;
+}
+
+.icing {
+  top: 2px;
+  left: 5px;
+  background-color: #fdd835;
+  width: 240px;
+  height: 90px;
+  border-radius: 50%;
+  position: absolute;
+}
+.icing:before {
+  content: "";
+  position: absolute;
+  top: 4px;
+  right: 5px;
+  bottom: 6px;
+  left: 5px;
+  background-color: #fff176;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #fdd835;
+}
+
+/* 🍯 Drips */
+.drip {
+  position: absolute;
+  display: block;
+  width: 50px;
+  height: 60px;
+  background-color: #fdd835;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+.drip1 {
+    top: 67px;
+    left: 5px;
+    transform: skewY(34deg);
+    height: 50px;
+    width: 40px;
+}
+.drip2 {
+    top: 65px;
+    left: 195px;
+    transform: skewY(-30deg);
+}
+.drip3 {
+    top: 85px;
+    left: 75px;
+    width: 80px;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+}
+
+/* 🕯️ Candle */
+.candle {
+  background-color: #444;
+  width: 12px;
+  height: 35px;
+  border-radius: 6px/3px;
+  position: absolute;
+  z-index: 10;
+}
+.candle:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 12px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #222;
+}
+
+.candle.out .flame {
+  display: none;
+}
+
+/* 🔥 Flame */
+.flame {
+  position: absolute;
+  background-color: #ff9800;
+  width: 10px;
+  height: 25px;
+  border-radius: 8px 8px 8px 8px/20px 20px 8px 8px;
+  top: -34px;
+  left: 50%;
+  margin-left: -7.5px;
+  z-index: 10;
+  box-shadow: 0 0 10px rgba(255, 165, 0, 0.5),
+              0 0 20px rgba(255, 165, 0, 0.5),
+              0 0 60px rgba(255, 165, 0, 0.5),
+              0 0 80px rgba(255, 165, 0, 0.5);
+  transform-origin: 50% 90%;
+  animation: flicker 1s ease-in-out alternate infinite;
+}
+
+@keyframes flicker {
+  0% { transform: skewX(5deg); }
+  25% { transform: skewX(-5deg); }
+  50% { transform: skewX(10deg); }
+  75% { transform: skewX(-10deg); }
+  100% { transform: skewX(5deg); }
+}
+
+/* 👣 Footer */
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #1a1a1a;
+  color: #fdd835;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.heart {
+  animation: blink 1s linear infinite;
+  width: 16px;
+  height: 16px;
+  margin-left: 5px;
+}
+@keyframes blink {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+/* 📱 Responsive: Mobile Fixes */
+@media (max-width: 500px) {
+  .cake {
+    transform: scale(0.8) translate(-62%, -62%);
+  }
+
+  .candle-count-display {
+    font-size: 22px;
+    padding: 8px;
+  }
+
+  .footer {
+    font-size: 12px;
+    padding: 6px;
+  }
+
+  .candle {
+    width: 14px;
+    height: 38px;
+  }
+}
+
+/* 🎈 Optional blow button for mobile */
+.blow-btn {
+  display: block;
+  margin: 0px;
+  padding: 12px 20px;
+  font-size: 16px;
+  background-color: #fdd835;
+  color: #121212;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+.blow-btn:active {
+  transform: scale(0.98);
+}
